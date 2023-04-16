@@ -6,7 +6,7 @@ export const ContactList = ({ contacts, filterHandler, removeHandler }) => {
   return (
     <>
       <Label>Find contacts by name</Label>
-      <Filter handleFilterContact={filterHandler}/>
+      <Filter handleFilterContact={e=>filterHandler(e)}/>
       <ul>
         {contacts.map(item => (
           <ContactItem
