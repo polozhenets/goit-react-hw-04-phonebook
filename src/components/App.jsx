@@ -29,7 +29,7 @@ export const App = () => {
     };
     contacts.some(i => i.name === name)
       ? alert(`${name} is already in contacts`)
-      : setContacts([contact, ...contacts]);
+      : setContacts(prevState=>[...prevState, ...contacts]);
   };
 
   const  filterHandler = e => {
@@ -44,7 +44,7 @@ export const App = () => {
   };
 
   const removeContactHandler = contactID => {
-    setContacts(contacts.filter(i => i.id !== contactID));
+    setContacts(prevState=>prevState.filter(i => i.id !== contactID));
   };
   return (
     <div
